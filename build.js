@@ -21,7 +21,8 @@ function scanForFilesToCompile(inPath, outPath) {
         }
         return compileFromFile(newPath)
           .then((ts) => {
-            fs.writeFileSync(`${outPath}/${fileOrFolder.split(".")[0]}.d.ts`, ts)
+            const outPut = `namespace Ctek {\r\n\r\n${ts}\r\n}`;
+            fs.writeFileSync(`${outPath}/${fileOrFolder.split(".")[0]}.d.ts`, outPut)
           });
       });
     });
