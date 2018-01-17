@@ -130,7 +130,4 @@ Temporary Items
 /*.d.ts
 !index.html
 
-dist
-package-lock.json
-/dist
 /docs
