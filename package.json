@@ -2,12 +2,9 @@
   "name": "pangea-json-schemas",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "./dist",
   "scripts": {
-    "prepare:dev": "npm run clean:dev",
     "prepare:dist": "npm run clean:dist && npm run copy:json-dist && ROOT_PATH=./src/main OUT_PATH=./dist node ./build.js",
-    "predocs": "rm -rf docs",
-    "clean:dev": "rm index.html index.js",
     "clean:dist": "rm -rf dist",
     "copy:json-dist": "cpy '**/*.json' '../../dist' --cwd='src/main' --parents"
   },
