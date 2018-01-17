@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig",
+  "compilerOptions": {
+    "rootDir": "./src/main",
+    "declaration": true
+  },
+  "include": [
+    "src/main/**/*",
+    "typings"
+  ]
+}

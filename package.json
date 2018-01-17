@@ -2,11 +2,12 @@
   "name": "pangea-json-schemas",
   "version": "0.0.1",
   "description": "",
-  "main": "./dist",
+  "main": "dist/index.js",
   "scripts": {
-    "prepare:dist": "npm run clean:dist && npm run copy:json-dist && ROOT_PATH=./src/main OUT_PATH=./dist node ./build.js",
+    "prepare:dist": "npm run clean:dist && npm run copy:json-dist && npm run tsc:dist && ROOT_PATH=./src/main OUT_PATH=./dist node ./build.js",
     "clean:dist": "rm -rf dist",
-    "copy:json-dist": "cpy '**/*.json' '../../dist' --cwd='src/main' --parents"
+    "copy:json-dist": "cpy '**/*.json' '../../dist' --cwd='src/main' --parents",
+    "tsc:dist": "tsc -p tsconfig.main.json --outDir ./dist"
   },
   "author": "Century Tech",
   "license": "MIT",

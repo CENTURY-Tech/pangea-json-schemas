@@ -19,11 +19,13 @@ function scanForFilesToCompile(inPath, outPath) {
         if (result.isDirectory()) {
           return scanForFilesToCompile(newPath, `${outPath}/${fileOrFolder}`);
         }
-        return compileFromFile(newPath)
-          .then((ts) => {
-            const outPut = `namespace Ctek {\r\n\r\n${ts}\r\n}`;
-            fs.writeFileSync(`${outPath}/${fileOrFolder.split(".")[0]}.d.ts`, outPut)
-          });
+        if (newPath.split(".")[2] === "json") {
+          return compileFromFile(newPath)
+            .then((ts) => {
+              const outPut = `namespace Ctek {\r\n\r\n${ts}\r\n}`;
+              fs.writeFileSync(`${outPath}/${fileOrFolder.split(".")[0]}.d.ts`, outPut)
+            });
+        }
       });
     });
   });

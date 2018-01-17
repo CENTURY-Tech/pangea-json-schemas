@@ -1,8 +1,8 @@
 {
   "title": "UserInterface",
-    "type": "object",
-      "id": "user",
-        "properties": {
+  "type": "object",
+  "id": "user",
+  "properties": {
     "_id": {
       "type": "string"
     },
@@ -11,7 +11,7 @@
     },
     "password": {
       "type": "string",
-        "pattern": "^[a-zA-Z0-9]{3,30}$"
+      "pattern": "^[a-zA-Z0-9]{3,30}$"
     },
     "authToken": {
       "type": [
@@ -21,12 +21,12 @@
     },
     "birthYear": {
       "type": "integer",
-        "minimum": 1900,
-          "maximum": 2013
+      "minimum": 1900,
+      "maximum": 2013
     },
     "email": {
       "type": "string",
-        "format": "email"
+      "format": "email"
     }
   },
   "required": [
