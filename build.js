@@ -22,7 +22,7 @@ function scanForFilesToCompile(inPath, outPath) {
         if (newPath.split(".")[2] === "json") {
           return compileFromFile(newPath)
             .then((ts) => {
-              const outPut = `namespace Ctek {\r\n\r\n${ts}\r\n}`;
+              const outPut = `declare namespace Ctek {\r\n\r\n${ts}\r\n}`;
               fs.writeFileSync(`${outPath}/${fileOrFolder.split(".")[0]}.d.ts`, outPut)
             });
         }
